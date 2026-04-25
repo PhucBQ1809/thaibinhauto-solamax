@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'SolaMax - Giải pháp phim cách nhiệt cao cấp',
-  description: 'SolaMax cung cấp phim cách nhiệt ô tô và nhà kính cao cấp, giảm nhiệt, chống tia UV, bảo vệ tối ưu.',
+  title: 'Thái Bình Auto - Car Detailing - Chăm Sóc Xe Chuyên Nghiệp',
+  description: 'Thái Bình Auto chuyên dán phim cách nhiệt, phủ Ceramic, chăm sóc xe chuyên nghiệp. Hotline: 097.570.8282',
 };
 
 export default function RootLayout({ children }) {

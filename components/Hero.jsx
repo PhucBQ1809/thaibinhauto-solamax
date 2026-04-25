@@ -4,9 +4,9 @@ export default function Hero() {
       <div className="hero-bg" style={{ backgroundImage: "url('/images/hero_bg.png')" }}></div>
       <div className="hero-overlay"></div>
       <div className="container hero-content">
-        <h1 className="hero-title">Đỉnh Cao Cách Nhiệt,<br/><span>Bảo Vệ Toàn Diện</span></h1>
-        <p className="hero-subtitle">Công nghệ phim cách nhiệt tiên tiến nhất từ SolaMax giúp loại bỏ 99% tia UV và giảm bức xạ nhiệt tối đa cho xe và ngôi nhà của bạn.</p>
-        <a href="#products" className="btn btn-primary">Khám phá sản phẩm</a>
+        <h1 className="hero-title">Chăm Sóc Xe<br/><span>Chuyên Nghiệp</span></h1>
+        <p className="hero-subtitle">Thái Bình Auto - Car Detailing chuyên dán phim cách nhiệt, phủ Ceramic, chăm sóc và bảo vệ toàn diện cho xế yêu của bạn.</p>
+        <a href="tel:0975708282" className="btn btn-primary">Liên hệ ngay: 097.570.8282</a>
       </div>
     </section>
   );

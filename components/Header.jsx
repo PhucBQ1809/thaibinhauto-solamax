@@ -48,10 +48,10 @@ export default function Header() {
   };
 
   return (
-    <header className="header" style={{ boxShadow: isScrolled ? '0 4px 6px -1px rgba(0,0,0,0.1)' : 'none' }}>
+    <header className="header" style={{ boxShadow: isScrolled ? '0 4px 6px -1px rgba(0,0,0,0.3)' : 'none' }}>
       <div className="container header-inner">
         <Link href="#" className="logo">
-          SolaMax<span>.</span>
+          THÁI BÌNH<span> AUTO</span>
         </Link>
         <nav className={`nav ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="nav-list">
@@ -85,11 +85,11 @@ export default function Header() {
                   }
                 }}
               >
-                Sản phẩm <span className="arrow">▼</span>
+                Dịch vụ <span className="arrow">▼</span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="#film-oto" onClick={(e) => handleSmoothScroll(e, '#products')}>Film cách nhiệt Ôtô</a></li>
-                <li><a href="#film-nha-kinh" onClick={(e) => handleSmoothScroll(e, '#products')}>Film cách nhiệt nhà kính</a></li>
+                <li><a href="#film-oto" onClick={(e) => handleSmoothScroll(e, '#products')}>Dán phim cách nhiệt</a></li>
+                <li><a href="#film-nha-kinh" onClick={(e) => handleSmoothScroll(e, '#products')}>Phủ Ceramic / Coating</a></li>
               </ul>
             </li>
             <li>
@@ -102,13 +102,13 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="#agency" onClick={(e) => handleSmoothScroll(e, '#agency')}>
-                Đại lý SolaMax
+              <a href="#contact" onClick={(e) => handleSmoothScroll(e, '#contact')}>
+                Liên hệ
               </a>
             </li>
             <li>
-              <a href="#warranty" className="btn-check-warranty" onClick={(e) => handleSmoothScroll(e, '#warranty')}>
-                Check bảo hành
+              <a href="tel:0975708282" className="btn-check-warranty">
+                📞 097.570.8282
               </a>
             </li>
           </ul>

@@ -7,14 +7,14 @@ export default function Testimonials() {
         </div>
         <div className="testimonials-grid">
           <div className="testimonial-card">
-            <div className="quote-icon">"</div>
-            <p>Thời tiết gay gắt của Hà Nội khiến căn hộ nhiều kính của tôi rất nóng. Từ khi dán phim SolaMax, căn nhà thay đổi hoàn toàn, mát mẻ và dễ chịu hơn rất nhiều. Thực sự là khoản đầu tư vô cùng xứng đáng.</p>
-            <div className="author">- Anh Hoàng, Cư dân Vinhomes</div>
+            <div className="quote-icon">&ldquo;</div>
+            <p>Tôi rất hài lòng với dịch vụ dán phim cách nhiệt tại Thái Bình Auto. Kỹ thuật viên làm việc rất tỉ mỉ, cẩn thận. Xe mát hẳn, không còn bị nóng như trước nữa.</p>
+            <div className="author">- Anh Hoàng, Khách hàng dán phim Ô tô</div>
           </div>
           <div className="testimonial-card">
-            <div className="quote-icon">"</div>
-            <p>Tôi thực sự ấn tượng với hiệu quả của SolaMax. Xe của tôi không chỉ mát mẻ hơn mà còn được bảo vệ khỏi tia UV. Tính năng chống chói vào ban đêm hoạt động cực kỳ tốt.</p>
-            <div className="author">- Chị Lan, Khách hàng sử dụng dịch vụ ô tô</div>
+            <div className="quote-icon">&ldquo;</div>
+            <p>Phủ Ceramic tại Thái Bình Auto thực sự xuất sắc! Xe đã qua 2 năm sử dụng mà sơn vẫn bóng loáng như mới. Dịch vụ tư vấn rất tận tình, chuyên nghiệp.</p>
+            <div className="author">- Chị Lan, Khách hàng phủ Ceramic</div>
           </div>
         </div>
       </div>
