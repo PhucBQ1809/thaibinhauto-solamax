@@ -1,25 +1,25 @@
 /* Modern CSS Reset & Variables - Thái Bình Auto Brand */
 :root {
-    --primary: #1a1d23; /* Dark Charcoal */
-    --primary-light: #2d3436;
-    --accent: #e63946; /* Bold Red */
-    --accent-hover: #c1121f;
-    --accent-glow: rgba(230, 57, 70, 0.4);
-    --silver: #c0c0c0; /* Chrome/Silver */
-    --silver-light: #d4d4d8;
-    --text-main: #e4e4e7; /* Light text for dark bg */
-    --text-light: #a1a1aa;
+    --primary: #000000;
+    --primary-light: #333333;
+    --accent: #E3000F; /* Dubai Care bright red */
+    --accent-hover: #CC000D;
+    --accent-glow: rgba(227, 0, 15, 0.4);
+    --silver: #cccccc;
+    --silver-light: #666666;
+    --text-main: #222222; /* Dark text for light bg */
+    --text-light: #555555;
     --text-inverse: #ffffff;
-    --text-dark: #18181b;
-    --bg-main: #1a1d23; /* Dark background */
-    --bg-secondary: #22252b;
-    --bg-card: #2a2d35;
-    --border: #3f3f46;
-    --border-light: rgba(255,255,255,0.08);
+    --text-dark: #000000;
+    --bg-main: #ffffff; /* White background */
+    --bg-secondary: #f8f9fa; /* Light grey background */
+    --bg-card: #ffffff;
+    --border: #e0e0e0;
+    --border-light: rgba(0,0,0,0.05);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5), 0 4px 6px -2px rgba(0,0,0,0.4);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
     --shadow-red: 0 4px 14px 0 var(--accent-glow);
 }
 
@@ -71,7 +71,7 @@ img {
 
 /* Typography */
 h1, h2, h3, h4 {
-    color: var(--text-inverse);
+    color: var(--text-dark);
     line-height: 1.2;
     font-weight: 700;
 }
@@ -137,17 +137,47 @@ p {
     border-color: var(--accent);
 }
 
+/* Top Bar */
+.top-bar {
+    background-color: var(--accent);
+    color: var(--text-inverse);
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 1001;
+    position: relative;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.top-bar-right a {
+    font-weight: 700;
+}
+
+.top-bar-right a:hover {
+    color: var(--primary);
+}
+
 /* Header */
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(26, 29, 35, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border);
     transition: var(--transition);
+}
+
+.header.scrolled {
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 .header-inner {
@@ -158,14 +188,49 @@ p {
 }
 
 .logo {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 800;
-    color: var(--text-inverse);
+    color: var(--text-dark);
     letter-spacing: -0.5px;
+    white-space: nowrap;
 }
 
 .logo span {
     color: var(--accent);
+}
+
+.header-search {
+    display: flex;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 2rem;
+    position: relative;
+}
+
+.header-search input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-main);
+    outline: none;
+    font-family: inherit;
+}
+
+.header-search input:focus {
+    border-color: var(--accent);
+}
+
+.header-search button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .nav-list {
@@ -277,18 +342,17 @@ p {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--text-inverse);
+    background-color: var(--text-dark);
     transition: var(--transition);
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    height: calc(100vh - 120px);
+    min-height: 500px;
     display: flex;
     align-items: center;
-    padding-top: 80px; /* Offset for header */
 }
 
 .hero-bg {
@@ -309,7 +373,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(26, 29, 35, 0.95) 0%, rgba(26, 29, 35, 0.5) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.5) 100%);
     z-index: -1;
 }
 
@@ -395,7 +459,7 @@ section {
 }
 
 .feature-card h3 {
-    color: var(--text-inverse);
+    color: var(--text-dark);
 }
 
 .feature-card p {
@@ -452,7 +516,7 @@ section {
 }
 
 .product-info h3 {
-    color: var(--text-inverse);
+    color: var(--text-dark);
 }
 
 .product-info p {
@@ -493,7 +557,7 @@ section {
 
 .news-card h3 {
     font-size: 1.25rem;
-    color: var(--text-inverse);
+    color: var(--text-dark);
 }
 
 .news-card h3 a:hover {
@@ -529,7 +593,7 @@ section {
 
 .testimonials .section-header p,
 .testimonials .section-header h2 {
-    color: var(--text-inverse);
+    color: var(--text-dark);
 }
 
 .testimonials-grid {
@@ -574,7 +638,7 @@ section {
 
 /* Footer */
 .footer {
-    background-color: #111318; /* Darkest */
+    background-color: #111318; /* Keep dark footer */
     color: var(--text-light);
     padding: 80px 0 20px;
     border-top: 1px solid var(--border);
@@ -649,9 +713,12 @@ section {
     .mobile-menu-btn {
         display: flex;
     }
+    .header-search {
+        display: none; /* Hide search on mobile for simplicity */
+    }
     .nav {
         position: absolute;
-        top: 80px;
+        top: 100%;
         left: 0;
         width: 100%;
         background: var(--bg-main);

@@ -6,119 +6,84 @@ import Link from 'next/link';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      // Active section tracking
-      const sections = document.querySelectorAll('section');
-      const headerOffset = 100;
-      let current = '';
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - headerOffset) {
-          current = section.getAttribute('id');
-        }
-      });
-      setActiveSection(current);
+      setIsScrolled(window.scrollY > 40); // Top bar is about 40px
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSmoothScroll = (e, targetId) => {
-    if (targetId === '#') return;
-    e.preventDefault();
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
-      const headerOffset = 80;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
-    <header className="header" style={{ boxShadow: isScrolled ? '0 4px 6px -1px rgba(0,0,0,0.3)' : 'none' }}>
-      <div className="container header-inner">
-        <Link href="#" className="logo">
-          THÁI BÌNH<span> AUTO</span>
-        </Link>
-        <nav className={`nav ${isMobileMenuOpen ? 'active' : ''}`}>
-          <ul className="nav-list">
-            <li>
-              <a 
-                href="#" 
-                className={!activeSection || activeSection === '' ? 'active' : ''} 
-                onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); setIsMobileMenuOpen(false); }}
-              >
-                Trang chủ
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#features" 
-                className={activeSection === 'features' ? 'active' : ''}
-                onClick={(e) => handleSmoothScroll(e, '#features')}
-              >
-                Giới thiệu
-              </a>
-            </li>
-            <li className={`dropdown ${isDropdownOpen ? 'active' : ''}`}>
-              <a 
-                href="#products" 
-                onClick={(e) => {
-                  if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    setIsDropdownOpen(!isDropdownOpen);
-                  } else {
-                    handleSmoothScroll(e, '#products');
-                  }
-                }}
-              >
-                Dịch vụ <span className="arrow">▼</span>
-              </a>
-              <ul className="dropdown-menu">
-                <li><a href="#film-oto" onClick={(e) => handleSmoothScroll(e, '#products')}>Dán phim cách nhiệt</a></li>
-                <li><a href="#film-nha-kinh" onClick={(e) => handleSmoothScroll(e, '#products')}>Phủ Ceramic / Coating</a></li>
-              </ul>
-            </li>
-            <li>
-              <a 
-                href="#news" 
-                className={activeSection === 'news' ? 'active' : ''}
-                onClick={(e) => handleSmoothScroll(e, '#news')}
-              >
-                Tin tức
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={(e) => handleSmoothScroll(e, '#contact')}>
-                Liên hệ
-              </a>
-            </li>
-            <li>
-              <a href="tel:0975708282" className="btn-check-warranty">
-                📞 097.570.8282
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          <span style={isMobileMenuOpen ? { transform: 'rotate(45deg) translate(5px, 5px)' } : {}}></span>
-          <span style={isMobileMenuOpen ? { opacity: '0' } : {}}></span>
-          <span style={isMobileMenuOpen ? { transform: 'rotate(-45deg) translate(7px, -7px)' } : {}}></span>
+    <>
+      <div className="top-bar">
+        <div className="container top-bar-inner">
+          <div className="top-bar-left">
+            <span>Chào mừng đến với hệ thống chăm sóc xe chuyên nghiệp</span>
+          </div>
+          <div className="top-bar-right">
+            <a href="tel:0989832889">☎️ Hotline 0989 832 889</a>
+          </div>
         </div>
       </div>
-    </header>
+      
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="container header-inner">
+          <Link href="/" className="logo">
+            THÁI BÌNH<span> AUTO</span>
+          </Link>
+
+          <div className="header-search">
+            <input type="text" placeholder="Tìm kiếm dịch vụ, sản phẩm..." />
+            <button aria-label="Search">🔍</button>
+          </div>
+
+          <nav className={`nav ${isMobileMenuOpen ? 'active' : ''}`}>
+            <ul className="nav-list">
+              <li>
+                <Link href="/">Trang chủ</Link>
+              </li>
+              <li className="dropdown">
+                <Link href="#den-xe">Độ đèn xe <span className="arrow">▼</span></Link>
+                <ul className="dropdown-menu">
+                  <li><Link href="#do-den-o-to">Độ đèn Led/Laser</Link></li>
+                  <li><Link href="#den-bi-gam">Đèn bi gầm ô tô</Link></li>
+                </ul>
+              </li>
+              <li>
+                <Link href="#am-thanh">Hệ thống âm thanh</Link>
+              </li>
+              <li>
+                <Link href="#phim-cach-nhiet">Phim cách nhiệt</Link>
+              </li>
+              <li className="dropdown">
+                <Link href="#nang-cap-option">Nâng cấp option <span className="arrow">▼</span></Link>
+                <ul className="dropdown-menu">
+                  <li><Link href="#man-hinh-android">Màn hình Android</Link></li>
+                  <li><Link href="#android-box">Android box</Link></li>
+                  <li><Link href="#cop-dien">Cốp điện</Link></li>
+                  <li><Link href="#camera-360">Camera 360</Link></li>
+                </ul>
+              </li>
+              <li className="dropdown">
+                <Link href="#tham-my-xe">Thẩm mỹ xe <span className="arrow">▼</span></Link>
+                <ul className="dropdown-menu">
+                  <li><Link href="#boc-da">Bọc da nội thất</Link></li>
+                  <li><Link href="#tham-san">Thảm sàn</Link></li>
+                  <li><Link href="#dan-ppf">Dán PPF</Link></li>
+                  <li><Link href="#wrap">Wrap đổi màu xe</Link></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <span style={isMobileMenuOpen ? { transform: 'rotate(45deg) translate(5px, 5px)' } : {}}></span>
+            <span style={isMobileMenuOpen ? { opacity: '0' } : {}}></span>
+            <span style={isMobileMenuOpen ? { transform: 'rotate(-45deg) translate(7px, -7px)' } : {}}></span>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }

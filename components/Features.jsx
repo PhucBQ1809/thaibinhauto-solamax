@@ -1,32 +1,14 @@
 export default function Features() {
   return (
-    <section className="features" id="features">
+    <section className="features" id="gioi-thieu" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
         <div className="section-header">
-          <h2>Tại sao chọn Thái Bình Auto?</h2>
-          <p>Dịch vụ chăm sóc xe chuyên nghiệp hàng đầu với đội ngũ kỹ thuật viên giàu kinh nghiệm</p>
+          <h2>Giới thiệu về Thái Bình Auto</h2>
+          <p>Nghiên cứu và phát triển sản phẩm độ xe chuyên nghiệp!</p>
         </div>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">🛡️</div>
-            <h3>Phim cách nhiệt cao cấp</h3>
-            <p>Sử dụng phim cách nhiệt chính hãng, cản nhiệt lên đến 85%, chống 99.9% tia UV bảo vệ nội thất xe.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">✨</div>
-            <h3>Phủ Ceramic / Coating</h3>
-            <p>Lớp phủ Ceramic bảo vệ sơn xe khỏi trầy xước, oxy hóa, giữ độ bóng và mới lâu dài.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🚗</div>
-            <h3>Chăm sóc nội thất</h3>
-            <p>Dọn nội thất chuyên sâu, làm sạch ghế da, khoang máy, khử mùi và diệt khuẩn toàn bộ xe.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">💎</div>
-            <h3>Bảo hành dài hạn</h3>
-            <p>Cam kết bảo hành chính hãng cho tất cả dịch vụ. Tư vấn tận tình, hỗ trợ khách hàng 24/7.</p>
-          </div>
+        <div className="features-content" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', fontSize: '1.1rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
+          <p>Xuất phát từ trung tâm dịch vụ độ xe ô tô, nhận thấy nhu cầu của khách hàng ngày cá nhân hóa, Thái Bình Auto đã phát triển thành mô hình trung tâm nghiên cứu sản xuất, chủ động phát triển các sản phẩm phục vụ nâng cấp xe.</p>
+          <p>Hiện nay chuỗi xưởng dịch vụ độ xe của Thái Bình Auto đã có tại nhiều tỉnh thành, ngoài ra hệ thống phân phối sản phẩm toàn quốc cũng phát triển mạnh, tạo ra giá trị chung cho ngành độ xe tại Việt Nam.</p>
         </div>
       </div>
     </section>

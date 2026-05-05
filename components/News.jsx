@@ -1,33 +1,33 @@
 export default function News() {
   return (
-    <section className="news" id="news">
+    <section className="news" id="news" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
         <div className="section-header">
-          <h2>Tin Tức & Kiến Thức</h2>
-          <p>Cập nhật thông tin mới nhất về công nghệ phim cách nhiệt</p>
+          <h2>Tin tức & Thông báo</h2>
+          <p>Cập nhật những thông tin mới nhất từ hệ thống Thái Bình Auto</p>
         </div>
         <div className="news-grid">
           <article className="news-card">
-            <div className="news-date">14/04/2026</div>
-            <h3><a href="#">Dán phim cách nhiệt ô tô có ảnh hưởng đến sóng GPS, điện thoại không?</a></h3>
-            <p>Nhiều người băn khoăn liệu phim cách nhiệt có làm yếu sóng GPS. Cùng SolaMax tìm hiểu sự thật về vấn đề này.</p>
+            <div className="news-date">Mới nhất</div>
+            <h3><a href="#">[THÔNG BÁO] Nâng Cấp Miễn Phí Tính Năng Đóng/Mở Cốp Điện Setcar Trên Màn Hình Zin Tại Hệ Thống Thái Bình Auto</a></h3>
+            <p>Kính gửi Quý khách hàng, Trong thời gian qua, hệ thống cốp điện tự động Setcar luôn là một trong những hạng mục nâng cấp tiện ích được ưa chuộng nhất. Nhằm tri ân sự tin tưởng...</p>
             <a href="#" className="read-more">Đọc tiếp &rarr;</a>
           </article>
           <article className="news-card">
-            <div className="news-date">14/04/2026</div>
-            <h3><a href="#">Giá dán kính lái ô tô bao nhiêu? Có nên chọn loại cao cấp?</a></h3>
-            <p>Kính lái là khu vực hấp thụ nhiệt lớn nhất. Phân tích chi tiết để bạn có lựa chọn phim cách nhiệt đúng đắn.</p>
+            <div className="news-date">Kiến thức độ xe</div>
+            <h3><a href="#">Top 5 Loại Phim Cách Nhiệt Ô Tô Mới Nhất Hiện Nay</a></h3>
+            <p>Phim cách nhiệt ô tô là tấm phim polyester mỏng được dán lên bề mặt kính. Chúng giúp làm giảm nhiệt lượng mặt trời truyền vào xe...</p>
             <a href="#" className="read-more">Đọc tiếp &rarr;</a>
           </article>
           <article className="news-card">
-            <div className="news-date">03/04/2026</div>
-            <h3><a href="#">Dán Cách Nhiệt Nhà Kính Chung Cư – Giải Pháp Chống Nóng Hiệu Quả</a></h3>
-            <p>Mùa hè oi bức, căn hộ nhiều kính trở nên ngột ngạt. Khám phá giải pháp cách nhiệt tối ưu cho chung cư.</p>
+            <div className="news-date">Dịch vụ</div>
+            <h3><a href="#">[Dịch Vụ] Dán Tem Xe Kona Uy Tín Số 1 Hà Nội</a></h3>
+            <p>Những chiếc decal tem xe ô tô đang trở lên vô cùng hữu ích trong việc bảo vệ zin xe, mang lại vẻ ngoài nổi bật và khác biệt.</p>
             <a href="#" className="read-more">Đọc tiếp &rarr;</a>
           </article>
         </div>
         <div className="text-center" style={{ marginTop: '40px' }}>
-          <a href="#" className="btn btn-outline">Xem thêm bài viết</a>
+          <a href="#" className="btn btn-outline" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>Xem thêm bài viết</a>
         </div>
       </div>
     </section>
